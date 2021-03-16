@@ -1,0 +1,169 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Ecomar Fundación</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="ecomar fundación">
+	<meta name="keywords" content="HTML, CSS, JavaScript">
+	<meta name="author" content="Fredy yela">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="{% static 'libs/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+	<link rel="stylesheet" href="{% static 'libs/fontawesome/css/all.css' %}">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+
+</head>
+
+<body>
+
+		<header>
+			<nav class="navbar navbar-expand-lg navbar-fondo menu-estilos">
+				<a class="navbar-brand" href="#">Navbar</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse"
+					data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="fas fa-bars"></span>
+				</button>
+
+				<div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
+					<ul class="navbar-nav col-12 col-lg-9 d-flex justify-content-center mr-auto px-0">
+						<li class="nav-item active">
+							<a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Eventos</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#registro">Registro</a>
+						</li>
+					</ul>
+					<div class="form-inline justify-content-center justify-content-lg-start my-2 my-lg-0">
+						<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
+					</div>
+				</div>
+			</nav>
+		</header>
+		<section >
+			<!-- <div class="row p-4">
+			<div class="col-md-6 d-flex justify-content-center">
+				<div class="imagen-banner">
+				</div>
+			</div>
+		</div> -->
+		<div class="row">
+			<div class="col-12 px-0">
+				<div class="banner header franja"></div>
+			</div>
+		</div>
+		</section>
+
+		<section>
+			<div class="row p-2 p-sm-5">
+				<div class="col-12 py-5">
+					<h1>Curches up</h1>
+					<p class="lead">Primera red social completamente dedicada a las Iglesias. Encuentra ubicaciones, eventos e
+						información</p>
+					<a href="#"><button class="btn btn-primary">Registrate</button></a>			
+				</div>
+			</div>
+		</section>
+
+		<section class="bg-fondo" id="registro">
+			<div class="row mx-0 pt-100 pb-80">
+				<div class="col-12 d-flex justify-content-center">
+					<div class="col-12 col-sm-8 col-md-6">
+						<h2>Registratro</h2>
+					</div>
+				</div>
+				<div class="col-12 d-flex justify-content-center">
+					<form class="col-12 col-sm-8 col-md-6">
+						<div class="form-group">
+							<label for="exampleInputEmail1">Email address</label>
+							<input type="email" class="form-control" id="exampleInputEmail1"
+								aria-describedby="emailHelp">
+							<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+								else.</small>
+						</div>
+						<div class="form-group">
+							<label for="exampleInputPassword1">Password</label>
+							<input type="password" class="form-control" id="exampleInputPassword1">
+						</div>
+						<div class="form-group form-check">
+							<input type="checkbox" class="form-check-input" id="exampleCheck1">
+							<label class="form-check-label" for="exampleCheck1">Check me out</label>
+						</div>
+						<button type="submit" class="btn btn-primary">Submit</button>
+					</form>
+				</div>
+			</div>
+		</section>
+
+		<section>
+			<div class="row p-2 p-sm-5">
+				<div class="col-12">
+					<h2>Iglesias Registradas</h2>
+				</div>
+				<div class="col-12 col-sm-6 col-md-4">
+					<img class="w-100 w-sm-auto img-fluid" src="{% static 'img/biblia.jpg' %}" alt="">
+					<h4>Iglesias Adventista</h4>
+					<p class="m-0 p-0"><span>Ciudad:</span> Orito</p>
+					<p class="m-0 p-0">Estamos Ubicados en la ciudad de Orito tenemos grupos musicales y alavanzas...
+					</p>
+					<a href="#">Quiro saber mas..</a>
+				</div>
+				<div class="col-12 col-sm-6 col-md-4 mt-4 mt-sm-0">
+					<img class="w-100 w-sm-auto img-fluid" src="{% static 'img/biblia.jpg' %}" alt="">
+					<h4>Iglesias Adventista</h4>
+					<p class="m-0 p-0"><span>Ciudad:</span> Orito</p>
+					<p class="m-0 p-0">Estamos Ubicados en la ciudad de Orito tenemos grupos musicales y alavanzas...
+					</p>
+					<a href="#">Quiro saber mas..</a>
+				</div>
+				<div class="col-12 col-sm-6 col-md-4 mt-4 mt-sm-0">
+					<img class="w-100 w-sm-auto img-fluid" src="{% static 'img/biblia.jpg' %}" alt="">
+					<h4>Iglesias Adventista</h4>
+					<p class="m-0 p-0"><span>Ciudad:</span> Orito</p>
+					<p class="m-0 p-0">Estamos Ubicados en la ciudad de Orito tenemos grupos musicales y alavanzas...
+					</p>
+					<a href="#">Quiro saber mas..</a>
+				</div>
+			</div>
+		</section>
+
+		<section>
+			<div class="row p-2 p-sm-5">
+				<div class="col-12 col-sm-6">
+					<h2>Somos!</h2>
+					<p>Somo la primera red competente dedicada a las Iglesias ubicaciones, eventos y mucho mas...</p>
+				</div>
+				<div class="col-12 col-sm-6">
+					<img class="w-100" src="{% static 'img/biblia.jpg' %}" alt="biblia">
+				</div>
+			</div>
+		</section>
+
+		<section>
+			<div class="row p-5">
+
+			</div>
+		</section>
+
+		<footer>
+			<div class="row p-2">
+				<div class="col-12 text-center">
+					Copy@2021 Fredy yela
+				</div>
+			</div>
+		</footer>
+
+
+
+	<script src="{% static 'libs/jquery/jquery-3.5.1.min.js' %}"></script>
+	<script src="{% static 'libs/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+	<script src="{% static 'libs/bootstrap/js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'js/script.js' %}"></script>
+</body>
+
+</html>

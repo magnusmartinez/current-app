@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+body {
+	font-family: 'Roboto', sans-serif;
+	overflow-x: hidden;
+	background: #EEFFFF;
+}
+.row {
+	margin-left: 0!important;
+	margin-right: 0!important;
+}
+.menu-estilos {
+	position: relative;
+	width: 100%;
+}
+
+.header {
+	background-image: url(../img/iglesia.jpg);
+	background-attachment: fixed;
+	/* background-position-x: center;
+	background-position-y: 300px;
+	background-attachment: fixed; */
+	/* box-sizing: border-box; */
+	/* padding-top: 20px; */
+	/* padding-bottom: 20px; */
+}
+
+.franja {
+	width: 100%;
+	height: 350px;
+}
+
+nav > div > ul > li:hover {
+	background: #072841;
+	color: #fff;
+	border-radius: 10px;
+	transition: background 1s;
+}
+
+.bg-fondo {
+	background: #E076DB;
+}
+.pt-100 {
+	padding-top: 100px;
+}
+.pb-80 {
+	padding-bottom: 80px;
+}
+.navbar-fondo, footer {
+	background: #256494;
+}
+.navbar-fondo a, footer {
+	color: #ffffff;
+	font-family: 'Roboto', sans-serif;
+}
+.fa-bars {
+	color: #ffffff;
+}
+/* 
+.imagen-banner {
+	border-radius: 50%;
+	height: 250px;
+	overflow: hidden;
+	background-image: url("/img/biblia.jpg");
+	background-size: cover;
+	background-position-x: center;
+	box-shadow: 1px 1px 10px rgba(1,1,1,1);
+	box-sizing: border-box;
+} */
+
+
+@media (min-width: 768px) {
+	.imagen-banner {
+		height: 300px;
+	}
+	.header {
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+}
+@media (min-width: 1024px) {
+	.imagen-banner {
+		width: 300px;
+		height: 300px;
+	}
+}
