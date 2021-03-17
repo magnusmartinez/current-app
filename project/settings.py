@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'home'
+    'home',
+    'usuario'
 ]
 
 MIDDLEWARE = [
@@ -132,3 +133,7 @@ STATICFILES_DIRS = (BASE_DIR, 'static',)
 #Configuración para el deploy
 #django_heroku.settings(locals())
 
+
+# Personalizacion del modelo de usario
+AUTH_USER_MODEL = 'usuario.User' 
+LOGIN_REDIRECT_URL = 'inicio'

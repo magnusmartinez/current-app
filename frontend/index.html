@@ -47,12 +47,6 @@
 			</nav>
 		</header>
 		<section >
-			<!-- <div class="row p-4">
-			<div class="col-md-6 d-flex justify-content-center">
-				<div class="imagen-banner">
-				</div>
-			</div>
-		</div> -->
 		<div class="row">
 			<div class="col-12 px-0">
 				<div class="banner header franja d-flex justify-content-center align-items-center">
@@ -69,7 +63,7 @@
 		<section>
 			<div class="row p-2 p-sm-5">
 				<div class="col-12 py-5">
-					<h1>Curches up</h1>
+					<h1>Churches Up</h1>
 					<p class="lead">Primera red social completamente dedicada a las Iglesias. Encuentra ubicaciones, eventos e
 						información</p>
 					<a href="#"><button class="btn btn-primary">Registrate</button></a>			
@@ -85,7 +79,9 @@
 					</div>
 				</div>
 				<div class="col-12 d-flex justify-content-center">
-					<form class="col-12 col-sm-8 col-md-6">
+					<form class="col-12 col-sm-8 col-md-6" method="post" action="{% url 'register-user' %}">
+						{% csrf_token %} <!-- token que de formulaio, todos los formulaios tienen que tener -->
+						{{ form.errors }}
 						<div class="form-group">
 							<label for="username">Usuario:</label>
 							<input type="text" class="form-control py-1 box-none" id="username" name="username" 
@@ -111,7 +107,7 @@
 						</div>
 						<div class="form-group">
 							<label for="exampleInputPassword1">Password</label>
-							<input type="password" class="form-control  py-1 box-none" id="exampleInputPassword1">
+							<input type="password" class="form-control  py-1 box-none" id="exampleInputPassword1" name="password">
 						</div>
 						<div class="form-group form-check">
 							<input type="checkbox" class="form-check-input" id="exampleCheck1">
