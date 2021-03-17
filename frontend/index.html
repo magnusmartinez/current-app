@@ -3,15 +3,16 @@
 <html>
 
 <head>
-	<title>Ecomar Fundación</title>
+	<title>Churches</title>
 	<meta charset="UTF-8">
-	<meta name="description" content="ecomar fundación">
+	<meta name="description" content="churches">
 	<meta name="keywords" content="HTML, CSS, JavaScript">
 	<meta name="author" content="Fredy yela">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="{% static 'libs/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
 	<link rel="stylesheet" href="{% static 'libs/fontawesome/css/all.css' %}">
 	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	
 
 
 </head>
@@ -19,8 +20,8 @@
 <body>
 
 		<header>
-			<nav class="navbar navbar-expand-lg navbar-fondo menu-estilos">
-				<a class="navbar-brand" href="#">Navbar</a>
+			<nav class="navbar navbar-expand-lg navbar-fondo-inicio menu-estilos">
+				<a class="navbar-brand" href="#">Churches</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse"
 					data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
 					aria-label="Toggle navigation">
@@ -30,17 +31,17 @@
 				<div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
 					<ul class="navbar-nav col-12 col-lg-9 d-flex justify-content-center mr-auto px-0">
 						<li class="nav-item active">
-							<a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+							<a class="nav-link" href="/index">Inicio <span class="sr-only">(current)</span></a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">Eventos</a>
+							<a class="nav-link" href="/blog">Blog</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="#registro">Registro</a>
 						</li>
 					</ul>
 					<div class="form-inline justify-content-center justify-content-lg-start my-2 my-lg-0">
-						<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
+						<button class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#modalLogin">Login</button>
 					</div>
 				</div>
 			</nav>
@@ -54,7 +55,13 @@
 		</div> -->
 		<div class="row">
 			<div class="col-12 px-0">
-				<div class="banner header franja"></div>
+				<div class="banner header franja d-flex justify-content-center align-items-center">
+					<div class="col-8 text-center">
+						<h2 class="display-4 text-white">Lorem ipsum dolor sit amet, consectetur adipisicing, elit. Fugiat, cumque id beatae minus consequuntur
+					</h2>
+					</div>
+					
+				</div>
 			</div>
 		</div>
 		</section>
@@ -80,15 +87,31 @@
 				<div class="col-12 d-flex justify-content-center">
 					<form class="col-12 col-sm-8 col-md-6">
 						<div class="form-group">
-							<label for="exampleInputEmail1">Email address</label>
-							<input type="email" class="form-control" id="exampleInputEmail1"
+							<label for="username">Usuario:</label>
+							<input type="text" class="form-control py-1 box-none" id="username" name="username" 
+								aria-describedby="emailHelp">
+							
+						</div>
+						<div class="form-group">
+							<label for="first_name">Nombre:</label>
+							<input type="text" class="form-control  py-1 box-none" id="first_name" name="first_name" 
+								aria-describedby="emailHelp">
+						</div>
+						<div class="form-group">
+							<label for="last_name">Apellido:</label>
+							<input type="text" class="form-control  py-1 box-none" id="last_name" name="last_name" 
+								aria-describedby="emailHelp">
+						</div>
+						<div class="form-group">
+							<label for="email">Correo:</label>
+							<input type="email" class="form-control  py-1 box-none" id="email" name="email" 
 								aria-describedby="emailHelp">
 							<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
 								else.</small>
 						</div>
 						<div class="form-group">
 							<label for="exampleInputPassword1">Password</label>
-							<input type="password" class="form-control" id="exampleInputPassword1">
+							<input type="password" class="form-control  py-1 box-none" id="exampleInputPassword1">
 						</div>
 						<div class="form-group form-check">
 							<input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -104,10 +127,11 @@
 			<div class="row p-2 p-sm-5">
 				<div class="col-12">
 					<h2>Iglesias Registradas</h2>
+					<hr>
 				</div>
 				<div class="col-12 col-sm-6 col-md-4">
-					<img class="w-100 w-sm-auto img-fluid" src="{% static 'img/biblia.jpg' %}" alt="">
-					<h4>Iglesias Adventista</h4>
+					<img class="w-100 w-sm-auto img-fluid" src="{% static 'img/iglesia.jpg' %}" alt="">
+					<h4>Iglesias Catolica</h4>
 					<p class="m-0 p-0"><span>Ciudad:</span> Orito</p>
 					<p class="m-0 p-0">Estamos Ubicados en la ciudad de Orito tenemos grupos musicales y alavanzas...
 					</p>
@@ -157,6 +181,41 @@
 				</div>
 			</div>
 		</footer>
+
+
+<!-- Modal -->
+<div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Iniciar Sessión</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="">
+      		<div class="modal-body">
+      			<div class="form-group">
+					<label for="usernameL">Usuario:</label>
+					<input type="text" class="form-control" id="usernameL" name="usernameL" 
+						aria-describedby="emailHelp">
+				</div>
+				<div class="form-group">
+					<label for="password">Contraseña:</label>
+					<input type="text" class="form-control" id="password" name="password" 
+						aria-describedby="emailHelp">
+				</div>
+        
+	      	</div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+	        <button type="button" class="btn btn-primary">Ingresar</button>
+	      </div>
+      </form>
+      
+    </div>
+  </div>
+</div>
 
 
 
