@@ -13,29 +13,31 @@ $(window).scroll(function(event) {
 			$(".nav-estilos").addClass('navbar-fondo-inicio');
 			$(".nav-estilos").removeClass('navbar-fondo-seg');//
 		}
-	});
+});
 
 
 
-const ajax = () => {
+const fn_async = async () => {
 	let form = document.getElementById("fomr-id")
 	let url = form.getAttribute("data-url-post")
 	let formData = new FormData(form)
 
-	let request = fetch(url, {
+	let response = await fetch(url, {
 		method: "POST",
-		body: formData //form
-	})
-
-	request.then(response => {
-		console.log(response)
-	}).catch(e => {
-		console.log(e)
-	})
-}
+		body: formData
+	}).then(res => res.json())
+	
+	let errors = response['errors']
+	if (errors != ""){
+		alert("El formulario tiene errores")
+		// aqui dentro mostrar los errores que tenga en formulaio
+		console.log(errors); // show errors in form
+	}else {
+		alert("El formulario no tiene errores")
+	}
+	}
 
 let button = document.getElementById("form_button")
 
-button.addEventListener('click', () => {
-	ajax()
-})
+button.addEventListener('click', fn_async)
+

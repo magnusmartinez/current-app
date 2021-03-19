@@ -8,21 +8,37 @@ from usuario.models import User
 
 # Create your views here.
 
-#class registrar_manager(CreateView):
-#    model = User
-#    template_name = 'index.html'
-#    form_class = user_form
-#    success_url = reverse_lazy('login')
 
-def async1(request):
+def register(request):
 	if request.method == 'POST':
 		form = user_form(request)
 		if form.is_valid():
 			form.save()
-
 	else:
 		form = user_form()
 
-	return JsonResponse({
-		"data": "coco"
-})
+	return render(request, "index.html", {'form': form})
+
+
+def async1(request):
+	errors = ""
+	if request.method == 'POST':
+		form = user_form({
+			'username': request.POST['username'],
+            'first_name': request.POST['first_name'],
+            'last_name': request.POST['last_name'],
+            'email': request.POST['email'],
+			'password': request.POST['password']
+		})
+		if form.is_valid():
+			form.save()
+		else:
+			errors = form.errors.as_json()
+
+	else:
+		form = user_form()
+		errors = form.errors.as_json()
+
+	return JsonResponse({"errors": errors})
+
+
