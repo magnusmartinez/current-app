@@ -8,6 +8,33 @@ body {
 	margin-left: 0!important;
 	margin-right: 0!important;
 }
+#flecha-subir {
+	position: fixed;
+	z-index: 1000;
+	bottom: 30px;
+	right: 30px;
+	display: none;
+	cursor: pointer;
+	background-image: url('../img/subir.png');
+    background-size: cover;
+    width: 70px;
+    height: 70px;
+}
+.flecha-subir {
+	display: block!important;
+	animation-duration: 3s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
 .menu-estilos {
 	position: relative;
 	width: 100%;
