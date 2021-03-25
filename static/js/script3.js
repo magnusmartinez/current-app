@@ -12,7 +12,6 @@ $(window).scroll(function(event) {
 			$(".nav-estilos").addClass('navbar-fondo-inicio');
 			$(".nav-estilos").removeClass('navbar-fondo-seg');//
 		}
-<<<<<<< HEAD:static/js/script.js
 	});
 */
 
@@ -37,11 +36,6 @@ elementoSubir.addEventListener('click', () => {
           scrollTop: 0
         }, 1000);
 });
-=======
-});
-
-
->>>>>>> 99cd1e8706d0e1236eaad8662406cee0b31614ee:static/js/script3.js
 
 const fn_async = async () => {
 	let form = document.getElementById("fomr-id")
@@ -55,15 +49,40 @@ const fn_async = async () => {
 	
 	let errors = response['errors']
 	if (errors != ""){
-		alert("El formulario tiene errores")
+		//alert("El formulario tiene errores")
 		// aqui dentro mostrar los errores que tenga en formulaio
-		console.log(errors); // show errors in form
+		let errores = JSON.parse(errors);
+	
+		for (var [key, value] of Object.entries(errores)) {
+			console.log(key + ' ' + value); 
+			validarFormulario(true, key, value);
+		}
+		  
+		  //console.log(indice); // 1
 	}else {
-		alert("El formulario no tiene errores")
+		//alert("El formulario no tiene errores")
+		validarFormulario(false, 'invalid-feedback');
 	}
 	}
 
 let button = document.getElementById("form_button")
 
 button.addEventListener('click', fn_async)
+
+
+
+
+function validarFormulario(validar, key, value){
+	let quitarErrores = document.getElementsByClassName(key);
+	for(var i = 0; i < quitarErrores.length; i++)
+		quitarErrores[i].style.display = "none";
+
+	if(validar){
+		if(document.getElementById(key)){
+			var prueba = document.getElementById(key).nextElementSibling;
+			prueba.style.display = "block";
+		}
+	}
+	
+}
 
